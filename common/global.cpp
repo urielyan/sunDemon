@@ -14,6 +14,6 @@ GlobalData *GlobalData::instance()
 
 GlobalData::GlobalData(QObject *parent) : QObject(parent)
 {
-  m_comPath = QString("");
-  m_udiskPath = QString("");
+  m_comPath = QString("com2");
+  m_udiskPath = QString("F:\QtCode\sunDemon\mokeUdisk");
 }

@@ -63,3 +63,54 @@ bool TestInfo::operator==(const TestInfo &info) const
         return false;
     }
 }
+
+int TestInfo::getTestTime()
+{
+    int realTestTime = 0;
+    switch (m_testTime) {
+    case Time30:
+        realTestTime = 30;
+        break;
+    case Time60:
+        realTestTime = 60;
+        break;
+    case Time120:
+        realTestTime = 120;
+        break;
+    case Time240:
+        realTestTime = 240;
+        break;
+    case Time480:
+        realTestTime = 480;
+        break;
+    default:
+        break;
+    }
+
+    return realTestTime;
+}
+
+int TestInfo::getRepeatTime()
+{
+    int realRepeatTime = 0;
+    switch (m_testTime) {
+    case Repeat2:
+        realRepeatTime = 2;
+        break;
+    case Repeat3:
+        realRepeatTime = 3;
+        break;
+    case Repeat5:
+        realRepeatTime = 5;
+        break;
+    case Repeat10:
+        realRepeatTime = 10;
+        break;
+    case Repeat50:
+        realRepeatTime = 50;
+        break;
+    default:
+        break;
+    }
+    return realRepeatTime;
+}

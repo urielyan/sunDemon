@@ -5,6 +5,7 @@
 
 #include <QWidget>
 #include <Widget.h>
+#include <masterthread.h>
 
 namespace Ui {
 class TestingWIn;
@@ -25,12 +26,17 @@ protected slots:
     void timerEvent(QTimerEvent *event);
 
 private slots:
+    void startTest();
+    void showResponse(const QString &s);
+    void processError(const QString &s);
+    void processTimeout(const QString &s);
 
 private:
     Ui::TestingWIn *ui;
 
     TestInfo m_info;
     int m_timerID;
+    MasterThread thread;
 
 private:
     void updateTableWidget();

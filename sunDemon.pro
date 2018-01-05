@@ -26,8 +26,9 @@ include (common/common.pri)
 include (test/test.pri)
 include (query/query.pri)
 include (settings/settings.pri)
-include (clean/clean.pri)
+include (clean/clean.pri)serialport
 include (selfCheck/selfCheck.pri)
+include (serialport/serialport.pri)
 
 SOURCES += main.cpp\
     MainWidget.cpp \

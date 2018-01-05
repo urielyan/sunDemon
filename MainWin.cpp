@@ -81,6 +81,7 @@ void MainWin::moveToPreWidget()
         return;
     }
     m_stackedLayout->removeWidget(widget);
+    delete widget;//在栈布局中remove widget时不能自动删除，固需要delete。
     widget = static_cast<Widget*>(m_stackedLayout->currentWidget());
     ui->title->setText(widget->title());
     ui->returnButton->setHidden(widget->isFirstWidget());
