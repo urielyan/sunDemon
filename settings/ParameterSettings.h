@@ -17,7 +17,7 @@ public:
     ~ParameterSettings();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_DateTimeSet_clicked();
 
 private:
     Ui::ParameterSettings *ui;

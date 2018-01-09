@@ -5,6 +5,7 @@
 #include <QDebug>
 
 #include "global.h"
+#include "Tested.h"
 
 TestingWIn::TestingWIn(QWidget *parent) :
     Widget(parent),
@@ -12,6 +13,7 @@ TestingWIn::TestingWIn(QWidget *parent) :
   , m_dataID(0)
 {
     ui->setupUi(this);
+    m_title = tr("正在测试");
 
     connect(&thread, &MasterThread::response, this, &TestingWIn::showResponse);
     connect(&thread, &MasterThread::error, this, &TestingWIn::processError);
@@ -56,6 +58,13 @@ void TestingWIn::timerEvent(QTimerEvent *event)
                 if(remainTime <= 0)
                 {
                     item->setText(QString::number(0));
+
+                    if(i == m_info.getRepeatTime() - 1)
+                    {
+                        killTimer(m_timerID);
+                        Tested *tested = new Tested();
+                        emit moveToNextWidget(tested);
+                    }
                     continue;
                 }
                 item->setText(QString::number(remainTime));

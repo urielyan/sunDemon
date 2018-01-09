@@ -5,14 +5,22 @@
 #include "TestMainWin.h"
 #include "MainWidget.h"
 #include "SelfCheckWin.h"
+#include "DataBase.h"
+
 #include <QStackedLayout>
 
 MainWin* MainWin::m_instance = NULL;
 MainWin::MainWin(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MianWin)
+  , m_db(new DataBaseManager)
 {
     m_instance = this;
+
+    m_db->setDatabaseName("samplemeasurement.db");
+    m_db->setConnectionName("samplemeasurement");
+    m_db->setTableName("sample_data");
+    m_db->init();
 
     ui->setupUi(this);
 
@@ -106,4 +114,14 @@ bool MainWin::selfCheck()
     m_stackedLayout->setCurrentWidget(w);
 
     return w->isPass();
+}
+
+DataBaseManager *MainWin::db() const
+{
+    return m_db;
+}
+
+void MainWin::setDb(DataBaseManager *db)
+{
+    m_db = db;
 }

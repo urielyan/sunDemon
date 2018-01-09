@@ -53,6 +53,7 @@
 #include <QtSerialPort/QSerialPort>
 
 #include <QTime>
+#include <QDebug>
 
 QT_USE_NAMESPACE
 
@@ -69,6 +70,7 @@ MasterThread::~MasterThread()
     quit = true;
     cond.wakeOne();
     mutex.unlock();
+    terminate(); //TODO This function is dangerous and its use is discouraged.
     wait();
 }
 //! [0]

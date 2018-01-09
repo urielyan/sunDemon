@@ -9,6 +9,7 @@ class MianWin;
 
 class QStackedLayout;
 class Widget;
+class DataBaseManager;
 class MainWin : public QMainWindow
 {
     Q_OBJECT
@@ -20,6 +21,9 @@ public:
     void setTitle(QString title);
     void setMessage(QString m);
 
+    DataBaseManager *db() const;
+    void setDb(DataBaseManager *db);
+
 public slots:
     void moveToNextWidget(Widget *widget);
     void moveToPreWidget();
@@ -30,6 +34,7 @@ private:
     Ui::MianWin *ui;
     QStackedLayout *m_stackedLayout;
     static MainWin* m_instance;
+    DataBaseManager *m_db;
 };
 
 #endif // MIANWIN_H

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>500</width>
+    <height>256</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -125,6 +125,24 @@
        </property>
        <property name="text">
         <string>% (m/m)</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="isSave">
+       <property name="text">
+        <string>测试是否保存</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="returnToMainWin">
+       <property name="text">
+        <string>返回主页面</string>
        </property>
       </widget>
      </item>

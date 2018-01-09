@@ -17,9 +17,10 @@ public:
     ~CalibrationMainWin();
 
 private slots:
-    void on_userCalibration_clicked();
 
-    void on_factoryCalibration_clicked();
+    void on_countTest_clicked();
+
+    void on_spectrumTest_clicked();
 
 private:
     Ui::CalibrationMainWin *ui;

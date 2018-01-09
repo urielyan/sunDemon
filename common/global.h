@@ -83,32 +83,6 @@
 #endif
 //#define WIDGET_FONT_SIZE 30;
 
-//class WinInfoListDialog : public QDialog
-//{
-//    Q_OBJECT
-//public:
-//    static WinInfoListDialog *instance();
-
-//    void showMsg(quint32 ErrorNum = 0);
-
-//    static QString getStrMsgbyNum(quint32 ErrorNum);
-//signals:
-
-//public slots:
-//    void slotCloseClicked();
-
-//private:
-//    WinInfoListDialog(QWidget *parent = 0);
-//    ~WinInfoListDialog();
-
-//private:
-//    QFrame *p_mainFrame;
-//    QLabel *pictureLabel;   //标题栏图片
-//    QLabel *titleLabel;     //标题栏文字
-//    QLabel *txtLabel;       //错误信息
-//    quint32 m_ErrorNum;     //错误代码号
-//};
-
 #include <QString>
 class GlobalData : public QObject
 {

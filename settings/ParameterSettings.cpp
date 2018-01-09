@@ -15,7 +15,7 @@ ParameterSettings::~ParameterSettings()
     delete ui;
 }
 
-void ParameterSettings::on_pushButton_clicked()
+void ParameterSettings::on_DateTimeSet_clicked()
 {
     emit moveToNextWidget(new SetupDatetime);
 }

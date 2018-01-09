@@ -1,8 +1,7 @@
 #include "CalibrationMainWin.h"
 #include "ui_CalibrationMainWin.h"
 
-#include "UserCalibration.h"
-#include "FactoryCalibration.h"
+#include "CountMeasurementMainWin.h"
 CalibrationMainWin::CalibrationMainWin(QWidget *parent) :
     Widget(parent),
     ui(new Ui::CalibrationMainWin)
@@ -16,12 +15,12 @@ CalibrationMainWin::~CalibrationMainWin()
     delete ui;
 }
 
-void CalibrationMainWin::on_userCalibration_clicked()
+void CalibrationMainWin::on_countTest_clicked()
 {
-    emit moveToNextWidget(new UserCalibration);
+    emit moveToNextWidget(new CountMeasurementMainWin);
 }
 
-void CalibrationMainWin::on_factoryCalibration_clicked()
+void CalibrationMainWin::on_spectrumTest_clicked()
 {
-    emit moveToNextWidget(new FactoryCalibration);
+
 }

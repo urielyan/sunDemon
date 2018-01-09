@@ -29,6 +29,7 @@ include (settings/settings.pri)
 include (clean/clean.pri)serialport
 include (selfCheck/selfCheck.pri)
 include (serialport/serialport.pri)
+include (db/db.pri)
 
 SOURCES += main.cpp\
     MainWidget.cpp \
@@ -40,3 +41,17 @@ HEADERS  += \
 
 FORMS    += MianWin.ui \
     MainWidget.ui
+
+
+#将文件拷贝到输出目录中。在qmake之后会执行命令。
+    src_file = $$PWD/db/samplemeasurement.db
+    dst_file = $$OUT_PWD/samplemeasurement.db
+
+win32 {
+    src_file ~= s,/,\\,g
+    dst_file ~= s,/,\\,g
+    system(copy /y $$src_file $$dst_file)
+}
+unix {
+    system(cp -r -f $$src_file $$dst_file)
+}
