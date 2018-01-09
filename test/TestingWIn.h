@@ -27,7 +27,7 @@ protected slots:
 
 private slots:
     void startTest();
-    void showResponse(const QString &s);
+    void showResponse(const QByteArray &s);
     void processError(const QString &s);
     void processTimeout(const QString &s);
 
@@ -36,6 +36,7 @@ private:
 
     TestInfo m_info;
     int m_timerID;
+    int m_dataID;
     MasterThread thread;
 
 private:

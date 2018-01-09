@@ -40,6 +40,8 @@ TestInfo &TestInfo::operator=(const TestInfo &info)
     m_testTime = info.m_testTime;
     m_repeatTime = info.m_repeatTime;
     m_standard = info.m_standard;
+
+    return *this;
 }
 
 TestInfo &TestInfo::operator=(TestInfo &info)
@@ -49,6 +51,7 @@ TestInfo &TestInfo::operator=(TestInfo &info)
     m_testTime = info.m_testTime;
     m_repeatTime = info.m_repeatTime;
     m_standard = info.m_standard;
+    return *this;
 }
 
 bool TestInfo::operator==(const TestInfo &info) const

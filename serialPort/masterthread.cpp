@@ -64,6 +64,7 @@ MasterThread::MasterThread(QObject *parent)
 //! [0]
 MasterThread::~MasterThread()
 {
+    qDebug() << __FUNCTION__;
     mutex.lock();
     quit = true;
     cond.wakeOne();
@@ -131,9 +132,9 @@ void MasterThread::run()
                 while (serial.waitForReadyRead(10))
                     responseData += serial.readAll();
 
-                QString response(responseData);
+                //QString response(responseData);
                 //! [12]
-                emit this->response(response);
+                emit this->response(responseData);
                 //! [10] //! [11] //! [12]
             } else {
                 emit timeout(tr("Wait read response timeout %1")

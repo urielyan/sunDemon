@@ -9,6 +9,7 @@
 TestingWIn::TestingWIn(QWidget *parent) :
     Widget(parent),
     ui(new Ui::TestingWIn)
+  , m_dataID(0)
 {
     ui->setupUi(this);
 
@@ -20,6 +21,10 @@ TestingWIn::TestingWIn(QWidget *parent) :
 TestingWIn::~TestingWIn()
 {
     qDebug() << __FUNCTION__;
+    disconnect(&thread, &MasterThread::response, this, &TestingWIn::showResponse);
+    disconnect(&thread, &MasterThread::error, this, &TestingWIn::processError);
+    disconnect(&thread, &MasterThread::timeout, this, &TestingWIn::processTimeout);
+    //killTimer(m_timerID);
     delete ui;
 }
 
@@ -37,7 +42,7 @@ void TestingWIn::setInfo(TestInfo &info)
 
 void TestingWIn::timerEvent(QTimerEvent *event)
 {
-    qDebug() << "Timer ID:" << event->timerId();
+    //qDebug() << "Timer ID:" << event->timerId();
 
     if (event->timerId() == m_timerID)
     {
@@ -74,9 +79,33 @@ void TestingWIn::startTest()
                        request);
 }
 
-void TestingWIn::showResponse(const QString &s)
+void TestingWIn::showResponse(const QByteArray &s)
 {
     qDebug() << __FUNCTION__ << s;
+#ifdef DEBUG
+    QByteArray data;
+    data[0] = (char)0xfe;
+    data[1] = (char)0x03;
+    data[2] = (char)0x31 + (char)0x01;
+    data[3] = (char)0x32 + (char)0x02;
+
+    data[4] = (char)0xff;
+    s = data;
+#else
+#endif
+
+    if (s[1] != (char)0x03)
+    {
+        return;
+    }
+
+    int countData = s.mid(2, 2).toInt();//取第二位后的两位为数据
+    QTableWidgetItem *item = ui->tableWidget->item(m_dataID, 2);
+    m_dataID++;
+    if(item)
+    {
+        item->setText(QString::number(countData));
+    }
 }
 
 void TestingWIn::processError(const QString &s)
