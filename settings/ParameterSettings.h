@@ -19,6 +19,8 @@ public:
 private slots:
     void on_DateTimeSet_clicked();
 
+    void on_factorySet_clicked();
+
 private:
     Ui::ParameterSettings *ui;
 };

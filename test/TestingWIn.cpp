@@ -11,6 +11,7 @@ TestingWIn::TestingWIn(QWidget *parent) :
     Widget(parent),
     ui(new Ui::TestingWIn)
   , m_dataID(0)
+  , m_timerID(-1)
 {
     ui->setupUi(this);
     m_title = tr("正在测试");
@@ -150,5 +151,5 @@ void TestingWIn::updateTableWidget()
         ui->tableWidget->setItem(i, 4, item);
     }
 
-    m_timerID = startTimer(100);
+    m_timerID = startTimer(10);
 }

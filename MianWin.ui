@@ -21,7 +21,7 @@
        <widget class="QLabel" name="title">
         <property name="font">
          <font>
-          <pointsize>25</pointsize>
+          <pointsize>20</pointsize>
          </font>
         </property>
         <property name="text">
@@ -58,7 +58,7 @@
          <x>0</x>
          <y>0</y>
          <width>774</width>
-         <height>304</height>
+         <height>325</height>
         </rect>
        </property>
       </widget>

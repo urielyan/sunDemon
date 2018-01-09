@@ -16,6 +16,11 @@ public:
     explicit CountMeasurementMainWin(QWidget *parent = 0);
     ~CountMeasurementMainWin();
 
+private slots:
+    void on_moveToReference_clicked();
+
+    void on_moveToTest_clicked();
+
 private:
     Ui::CountMeasurementMainWin *ui;
 };

@@ -135,7 +135,7 @@
      <item>
       <widget class="QPushButton" name="isSave">
        <property name="text">
-        <string>测试是否保存</string>
+        <string>测试是否保存成功</string>
        </property>
       </widget>
      </item>
