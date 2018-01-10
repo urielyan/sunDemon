@@ -1,4 +1,4 @@
-#ifndef CALIBRATIONMAINWIN_H
+﻿#ifndef CALIBRATIONMAINWIN_H
 #define CALIBRATIONMAINWIN_H
 
 #include <QWidget>
@@ -21,6 +21,8 @@ private slots:
     void on_countTest_clicked();
 
     void on_spectrumTest_clicked();
+
+    void on_calibrationTest_clicked();
 
 private:
     Ui::CalibrationMainWin *ui;

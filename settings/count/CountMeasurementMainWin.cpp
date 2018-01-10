@@ -1,4 +1,4 @@
-#include "CountMeasurementMainWin.h"
+﻿#include "CountMeasurementMainWin.h"
 #include "ui_CountMeasurementMainWin.h"
 
 #include "CountMeasurementTesting.h"
@@ -18,11 +18,15 @@ CountMeasurementMainWin::~CountMeasurementMainWin()
 void CountMeasurementMainWin::on_moveToReference_clicked()
 {
     //TODO: 移动滑板位置。
-    emit moveToNextWidget(new CountMeasurementTesting);
+    CountMeasurementTesting *c = new CountMeasurementTesting;
+    c->setIsLoop(ui->isLoop->isChecked());
+    emit moveToNextWidget(c);
 }
 
 void CountMeasurementMainWin::on_moveToTest_clicked()
 {
     //TODO: 移动滑板位置。
-    emit moveToNextWidget(new CountMeasurementTesting);
+    CountMeasurementTesting *c = new CountMeasurementTesting;
+    c->setIsLoop(ui->isLoop->isChecked());
+    emit moveToNextWidget(c);
 }

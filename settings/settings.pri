@@ -1,4 +1,4 @@
-INCLUDEPATH += $$PWD $$PWD/count $$PWD/factory
+INCLUDEPATH += $$PWD $$PWD/count $$PWD/factory $$PWD/spectrum $$PWD/calibrate
 
 SOURCES += $$PWD/SettingsMainWin.cpp \
     $$PWD/ParameterSettings.cpp \
@@ -7,7 +7,9 @@ SOURCES += $$PWD/SettingsMainWin.cpp \
     $$PWD/count/CountMeasurementMainWin.cpp \
     $$PWD/count/CountMeasurementTesting.cpp \
     $$PWD/count/CountMeasurementTested.cpp \
-    $$PWD/factory/FactorySettings.cpp
+    $$PWD/factory/FactorySettings.cpp \
+    $$PWD/calibrate/CalibrateMeasurementMainWin.cpp \
+    $$PWD/spectrum/SpectrumMeasurementMainWin.cpp
 
 HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/ParameterSettings.h \
@@ -16,7 +18,9 @@ HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/count/CountMeasurementMainWin.h \
     $$PWD/count/CountMeasurementTesting.h \
     $$PWD/count/CountMeasurementTested.h \
-    $$PWD/factory/FactorySettings.h
+    $$PWD/factory/FactorySettings.h \
+    $$PWD/calibrate/CalibrateMeasurementMainWin.h \
+    $$PWD/spectrum/SpectrumMeasurementMainWin.h
 
 FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/ParameterSettings.ui \
@@ -25,4 +29,6 @@ FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/count/CountMeasurementMainWin.ui \
     $$PWD/count/CountMeasurementTesting.ui \
     $$PWD/count/CountMeasurementTested.ui \
-    $$PWD/factory/FactorySettings.ui
+    $$PWD/factory/FactorySettings.ui \
+    $$PWD/calibrate/CalibrateMeasurementMainWin.ui \
+    $$PWD/spectrum/SpectrumMeasurementMainWin.ui

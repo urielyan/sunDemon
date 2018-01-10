@@ -1,7 +1,10 @@
-#include "CalibrationMainWin.h"
+﻿#include "CalibrationMainWin.h"
 #include "ui_CalibrationMainWin.h"
 
 #include "CountMeasurementMainWin.h"
+#include "SpectrumMeasurementMainWin.h"
+#include "CalibrateMeasurementMainWin.h"
+
 CalibrationMainWin::CalibrationMainWin(QWidget *parent) :
     Widget(parent),
     ui(new Ui::CalibrationMainWin)
@@ -22,5 +25,10 @@ void CalibrationMainWin::on_countTest_clicked()
 
 void CalibrationMainWin::on_spectrumTest_clicked()
 {
+    emit moveToNextWidget(new SpectrumMeasurementMainWin);
+}
 
+void CalibrationMainWin::on_calibrationTest_clicked()
+{
+    emit moveToNextWidget(new CalibrateMeasurementMainWin);
 }

@@ -1,8 +1,9 @@
-#include "CountMeasurementTesting.h"
+﻿#include "CountMeasurementTesting.h"
 #include "ui_CountMeasurementTesting.h"
 
 
-#include<QTimerEvent>
+#include <QTimerEvent>
+#include <QDebug>
 
 #include "CountMeasurementTested.h"
 CountMeasurementTesting::CountMeasurementTesting(QWidget *parent) :
@@ -11,6 +12,7 @@ CountMeasurementTesting::CountMeasurementTesting(QWidget *parent) :
   , m_count(11)
   , m_seconds(60)
   , m_timerID(-1)
+  , m_isLoop(false)
 {
     ui->setupUi(this);
     m_title = tr("正在计数测量");
@@ -61,6 +63,12 @@ void CountMeasurementTesting::timerEvent(QTimerEvent *event)
                     if(i == m_count - 1)
                     {
                         killTimer(m_timerID);
+                        qDebug() << m_isLoop;
+                        if (m_isLoop)
+                        {
+                            init();
+                            return;
+                        }
                         CountMeasurementTested *tested = new CountMeasurementTested();
                         emit moveToNextWidget(tested);
                     }
@@ -71,4 +79,14 @@ void CountMeasurementTesting::timerEvent(QTimerEvent *event)
         }
     }
 
+}
+
+bool CountMeasurementTesting::isLoop() const
+{
+    return m_isLoop;
+}
+
+void CountMeasurementTesting::setIsLoop(bool isLoop)
+{
+    m_isLoop = isLoop;
 }
