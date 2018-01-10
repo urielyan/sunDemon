@@ -55,3 +55,6 @@ win32 {
 unix {
     system(cp -r -f $$src_file $$dst_file)
 }
+
+RESOURCES += \
+    src.qrc

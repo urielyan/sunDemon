@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/button.jpeg</file>
+        <file>qss/main.qss</file>
+    </qresource>
+</RCC>

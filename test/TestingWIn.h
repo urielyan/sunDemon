@@ -18,6 +18,7 @@ class TestingWIn : public Widget
 public:
     explicit TestingWIn(QWidget *parent = 0);
     ~TestingWIn();
+    bool init() Q_DECL_OVERRIDE;
 
     TestInfo &info();
     void setInfo(TestInfo &info);

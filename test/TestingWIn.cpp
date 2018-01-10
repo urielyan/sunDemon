@@ -31,6 +31,13 @@ TestingWIn::~TestingWIn()
     delete ui;
 }
 
+bool TestingWIn::init()
+{
+    updateTableWidget();
+    startTest();
+    return true;
+}
+
 TestInfo &TestingWIn::info()
 {
     return m_info;
@@ -39,8 +46,6 @@ TestInfo &TestingWIn::info()
 void TestingWIn::setInfo(TestInfo &info)
 {
     m_info = info;
-    updateTableWidget();
-    startTest();
 }
 
 void TestingWIn::timerEvent(QTimerEvent *event)

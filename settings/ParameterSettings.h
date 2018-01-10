@@ -21,6 +21,8 @@ private slots:
 
     void on_factorySet_clicked();
 
+    void on_KBSet_clicked();
+
 private:
     Ui::ParameterSettings *ui;
 };

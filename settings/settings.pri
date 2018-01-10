@@ -9,7 +9,8 @@ SOURCES += $$PWD/SettingsMainWin.cpp \
     $$PWD/count/CountMeasurementTested.cpp \
     $$PWD/factory/FactorySettings.cpp \
     $$PWD/calibrate/CalibrateMeasurementMainWin.cpp \
-    $$PWD/spectrum/SpectrumMeasurementMainWin.cpp
+    $$PWD/spectrum/SpectrumMeasurementMainWin.cpp \
+    $$PWD/AlterKBValue.cpp
 
 HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/ParameterSettings.h \
@@ -20,7 +21,8 @@ HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/count/CountMeasurementTested.h \
     $$PWD/factory/FactorySettings.h \
     $$PWD/calibrate/CalibrateMeasurementMainWin.h \
-    $$PWD/spectrum/SpectrumMeasurementMainWin.h
+    $$PWD/spectrum/SpectrumMeasurementMainWin.h \
+    $$PWD/AlterKBValue.h
 
 FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/ParameterSettings.ui \
@@ -31,4 +33,5 @@ FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/count/CountMeasurementTested.ui \
     $$PWD/factory/FactorySettings.ui \
     $$PWD/calibrate/CalibrateMeasurementMainWin.ui \
-    $$PWD/spectrum/SpectrumMeasurementMainWin.ui
+    $$PWD/spectrum/SpectrumMeasurementMainWin.ui \
+    $$PWD/AlterKBValue.ui
