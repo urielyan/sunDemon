@@ -30,12 +30,10 @@ SetupDatetime::SetupDatetime(QWidget *parent)
         p_middleFrame->setObjectName("label");
         QHBoxLayout *p_HBoxLabel =  new QHBoxLayout(p_middleFrame);
         QLabel *p_Label = new QLabel(p_middleFrame);
-        p_Label->setFont(QFont(FONT_NAME, FONT_SIZE));
         m_labelList.append(p_Label);
         p_Label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QLabel *p_LabelUnit = new QLabel(p_middleFrame);
         m_labelListUnit.append(p_LabelUnit);
-        p_LabelUnit->setFont(QFont(FONT_NAME, FONT_SIZE - 10));
         p_LabelUnit->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         p_HBoxLabel->addWidget(p_Label);
         p_HBoxLabel->addWidget(p_LabelUnit);
@@ -89,8 +87,6 @@ SetupDatetime::SetupDatetime(QWidget *parent)
                         "QPushButton{min-height: 60;}"
                         "QPushButton#bottombutton, QPushButton#upbutton{text-align:center;}");
 
-    INIT_LABEL_SIZE_FONT;
-    p_label->setFont(QFont(FONT_NAME, FONT_SIZE * 2 ,QFont::Normal));
     p_label->setObjectName("title");
 
 }
@@ -99,7 +95,6 @@ void SetupDatetime::slotSaveButtonClicked()
 {
     //ok button
     QMessageBox box;
-    box.setFont(QFont(FONT_NAME, FONT_SIZE ,QFont::Normal));
     box.setText(tr("需要保存此次修改的日期和时间么？\n") + getSetDateTime());
     box.setStandardButtons(QMessageBox::Cancel|QMessageBox::Yes);
     int res = box.exec();

@@ -7,15 +7,17 @@
 
 #include "CountMeasurementTested.h"
 CountMeasurementTesting::CountMeasurementTesting(QWidget *parent) :
-    Widget(parent),
+    MeasurementingWidget(parent),
     ui(new Ui::CountMeasurementTesting)
-  , m_count(11)
-  , m_seconds(60)
-  , m_timerID(-1)
+
   , m_isLoop(false)
 {
     ui->setupUi(this);
     m_title = tr("正在计数测量");
+
+    m_count = 11;
+    m_seconds = 60;
+    m_remainingTimeColumn = 1;
 }
 
 CountMeasurementTesting::~CountMeasurementTesting()
@@ -38,9 +40,9 @@ bool CountMeasurementTesting::init()
 
         QString remainTimeString = QString::number((i+1) * m_seconds);
         QTableWidgetItem * item = new QTableWidgetItem(remainTimeString);
-        ui->tableWidget->setItem(i, 1, item);
+        ui->tableWidget->setItem(i, m_remainingTimeColumn, item);
     }
-    m_timerID = startTimer(10);
+    m_timerID = startTimer(m_interval);
 
     return true;
 }
@@ -51,7 +53,7 @@ void CountMeasurementTesting::timerEvent(QTimerEvent *event)
     {
         for (int i = 0; i < m_count; ++i)
         {
-            QTableWidgetItem *item = ui->tableWidget->item(i, 1);
+            QTableWidgetItem *item = ui->tableWidget->item(i, m_remainingTimeColumn);
             if (item)
             {
                 int remainTime = item->text().toInt();

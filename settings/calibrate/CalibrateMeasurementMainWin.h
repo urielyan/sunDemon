@@ -16,6 +16,9 @@ public:
     explicit CalibrateMeasurementMainWin(QWidget *parent = 0);
     ~CalibrateMeasurementMainWin();
 
+private slots:
+    void on_calibrateMeasurement_clicked();
+
 private:
     Ui::CalibrateMeasurementMainWin *ui;
 };

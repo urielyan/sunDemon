@@ -8,13 +8,14 @@
 #include "Tested.h"
 
 TestingWIn::TestingWIn(QWidget *parent) :
-    Widget(parent),
+    MeasurementingWidget(parent),
     ui(new Ui::TestingWIn)
   , m_dataID(0)
-  , m_timerID(-1)
 {
     ui->setupUi(this);
     m_title = tr("正在测试");
+
+    m_remainingTimeColumn = 4;
 
     connect(&thread, &MasterThread::response, this, &TestingWIn::showResponse);
     connect(&thread, &MasterThread::error, this, &TestingWIn::processError);
@@ -56,7 +57,7 @@ void TestingWIn::timerEvent(QTimerEvent *event)
     {
         for (int i = 0; i < m_info.getRepeatTime(); ++i)
         {
-            QTableWidgetItem *item = ui->tableWidget->item(i, 4);
+            QTableWidgetItem *item = ui->tableWidget->item(i, m_remainingTimeColumn);
             if (item)
             {
                 int remainTime = item->text().toInt();
@@ -131,7 +132,6 @@ void TestingWIn::processError(const QString &s)
 void TestingWIn::processTimeout(const QString &s)
 {
     qDebug() << __FUNCTION__ << s;
-
 }
 
 void TestingWIn::updateTableWidget()
