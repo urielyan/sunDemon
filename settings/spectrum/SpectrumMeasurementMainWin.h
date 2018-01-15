@@ -16,6 +16,11 @@ public:
     explicit SpectrumMeasurementMainWin(QWidget *parent = 0);
     ~SpectrumMeasurementMainWin();
 
+private slots:
+    void on_moveToReference_clicked();
+
+    void on_moveToTest_clicked();
+
 private:
     Ui::SpectrumMeasurementMainWin *ui;
 };

@@ -1,4 +1,4 @@
-#ifndef SPECTRUMMEASUREMENTTESTING_H
+﻿#ifndef SPECTRUMMEASUREMENTTESTING_H
 #define SPECTRUMMEASUREMENTTESTING_H
 
 #include <QWidget>
@@ -19,6 +19,11 @@ public:
 
 private:
     Ui::SpectrumMeasurementTesting *ui;
+
+    int m_count;
+    int m_seconds;
+    int m_timerID;
+    bool m_isLoop;
 };
 
 #endif // SPECTRUMMEASUREMENTTESTING_H
