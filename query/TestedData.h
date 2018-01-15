@@ -16,8 +16,14 @@ public:
     explicit TestedData(QWidget *parent = 0);
     ~TestedData();
 
+    virtual bool init();
+private slots:
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::TestedData *ui;
+
+private:
 };
 
 #endif // TESTEDDATA_H

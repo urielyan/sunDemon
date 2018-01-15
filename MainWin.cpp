@@ -8,6 +8,7 @@
 #include "DataBase.h"
 
 #include <QStackedLayout>
+#include  <QApplication>
 
 MainWin* MainWin::m_instance = NULL;
 MainWin::MainWin(QWidget *parent) :
@@ -17,7 +18,7 @@ MainWin::MainWin(QWidget *parent) :
 {
     m_instance = this;
 
-    m_db->setDatabaseName("samplemeasurement.db");
+    m_db->setDatabaseName(QApplication::instance()->applicationDirPath() + "/../samplemeasurement.db");
     m_db->setConnectionName("samplemeasurement");
     m_db->setTableName("sample_data");
     m_db->init();

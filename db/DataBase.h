@@ -1,6 +1,7 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
+#include <QHash>
 #include <QObject>
 
 class QSqlTableModel;
@@ -18,6 +19,7 @@ public:
     void setDb(QSqlDatabase *db);
 
     QSqlTableModel *model() const;
+    QSqlTableModel *model(QString tableName);
     void setModel(QSqlTableModel *model);
 
     QString tableName() const;
@@ -39,8 +41,10 @@ private:
     QString             m_connectionName;           //!< 数据库的连接名称
     QString             m_tableName;                //!< 数据库的表名称
 
-    QSqlTableModel*      m_model;                    //!< 数据库对应的仿真软件数据model
+    QSqlTableModel*     m_model;                    //!< 数据库对应的仿真软件数据model
     QSqlDatabase*       m_db;                       //!< 对应的数据库指针
+
+    QHash<QString, QSqlTableModel*> m_models;
 };
 
 #endif // DATABASE_H

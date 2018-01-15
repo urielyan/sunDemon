@@ -1,6 +1,51 @@
 QPushButton {
-    border: 2px solid #8f8f91;
-    border-radius: 6px;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    border: 2px solid White;
+    border-radius: 10px;
+    background-color: transparent;
+    color: White;
 }
+
+QWidget {
+    background-color: blue;
+}
+
+QLabel {
+    color: White;
+    background-color: transparent;
+}
+
+QHeaderView::section {
+      background-color: blue;
+      color: white;
+      padding-left: 4px;
+      border: 1px solid #6c6c6c;
+}
+QTableView {
+    color: white;
+      selection-background-color: blue;
+  }
+  QTableView QTableCornerButton::section {
+        background: blue;
+        border: 0px outset red;
+    }
+
+QLineEdit {
+    color: white;
+    background-color: blue;
+}
+
+
+QComboBox {
+      border: 1px solid blue;
+      color: white;
+      background-color: blue;
+  }
+
+  QComboBox:editable {
+      background: white;
+  }
+  QAbstractItemView {
+        border: 1px solid white;
+        color: white;
+        background-color: blue;
+    }

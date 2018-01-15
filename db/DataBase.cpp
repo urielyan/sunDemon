@@ -22,7 +22,8 @@ DataBaseManager::DataBaseManager(QObject *parent)
 {
     if (!QSqlDatabase::drivers().contains("QSQLITE"))
     {
-        QMessageBox::critical(NULL, "Unable to load database", "This demo needs the SQLITE driver");
+        QMessageBox::critical(NULL, "Unable to load database",
+                              "This software needs the SQLITE driver");
     }
 }
 
@@ -51,7 +52,7 @@ bool DataBaseManager::init()
             QSqlQuery query(*m_db);
             QString createTable = QString(
                         "create table %1 (id integer primary key autoincrement)"
-                        ).arg(m_tableName);
+                        ).arg("m_tableName");
             if (!query.exec(createTable))
             {
                 return false;
@@ -61,6 +62,14 @@ bool DataBaseManager::init()
         m_model->setTable(m_tableName);
         m_model->select();
 
+        foreach (QString tableName, m_db->tables()) {
+                qDebug() << tableName;
+                QSqlTableModel *model = new QSqlTableModel(this, *m_db);
+                model->setTable(tableName);
+                model->select();
+
+                m_models.insert(tableName, model);
+        }
         return true;
     }
     else
@@ -84,6 +93,19 @@ void DataBaseManager::setDb(QSqlDatabase *db)
 QSqlTableModel *DataBaseManager::model() const
 {
     return m_model;
+}
+
+QSqlTableModel *DataBaseManager::model(QString tableName)
+{
+    if (m_models.contains(tableName))
+    {
+        qDebug() << "TODO" << tableName;
+        return m_models.value(tableName);
+    }
+    qDebug() << "TODO" << __FILE__ << __FUNCTION__;
+    //TODO: createTable
+
+    return new QSqlTableModel(this);
 }
 
 void DataBaseManager::setModel(QSqlTableModel *model)

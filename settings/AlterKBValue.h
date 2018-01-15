@@ -16,6 +16,13 @@ public:
     explicit AlterKBValue(QWidget *parent = 0);
     ~AlterKBValue();
 
+private slots:
+    void on_sub_clicked();
+
+    void on_add_clicked();
+
+    void on_workQueue_currentIndexChanged(int index);
+
 private:
     Ui::AlterKBValue *ui;
 };

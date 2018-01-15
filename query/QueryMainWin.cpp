@@ -1,11 +1,8 @@
-#include "includes.h"
-
 #include "QueryMainWin.h"
 #include "ui_QueryMainWin.h"
 
 #include <QSqlTableModel>
 
-#include "DataBase.h"
 #include "CountData.h"
 #include "CalibrateData.h"
 #include "TestedData.h"

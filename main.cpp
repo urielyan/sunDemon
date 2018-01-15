@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
     }
 
 
-
+    qDebug() << a.applicationDirPath();
     return a.exec();
 }
