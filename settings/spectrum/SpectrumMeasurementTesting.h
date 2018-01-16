@@ -1,6 +1,7 @@
 ﻿#ifndef SPECTRUMMEASUREMENTTESTING_H
 #define SPECTRUMMEASUREMENTTESTING_H
 
+#include <MeasurementingWidget.h>
 #include <QWidget>
 #include <Widget.h>
 
@@ -8,7 +9,7 @@ namespace Ui {
 class SpectrumMeasurementTesting;
 }
 
-class SpectrumMeasurementTesting : public Widget
+class SpectrumMeasurementTesting : public MeasurementingWidget
 {
     Q_OBJECT
 
@@ -19,11 +20,6 @@ public:
 
 private:
     Ui::SpectrumMeasurementTesting *ui;
-
-    int m_count;
-    int m_seconds;
-    int m_timerID;
-    bool m_isLoop;
 };
 
 #endif // SPECTRUMMEASUREMENTTESTING_H

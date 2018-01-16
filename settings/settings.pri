@@ -12,7 +12,9 @@ SOURCES += $$PWD/SettingsMainWin.cpp \
     $$PWD/spectrum/SpectrumMeasurementMainWin.cpp \
     $$PWD/AlterKBValue.cpp \
     $$PWD/spectrum/SpectrumMeasurementTesting.cpp \
-    $$PWD/calibrate/CalibrateMeasurementing.cpp
+    $$PWD/calibrate/CalibrateMeasurementing.cpp \
+    $$PWD/calibrate/ViewCalibrateData.cpp \
+    $$PWD/calibrate/InputSPercentage.cpp
 
 HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/ParameterSettings.h \
@@ -26,7 +28,9 @@ HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/spectrum/SpectrumMeasurementMainWin.h \
     $$PWD/AlterKBValue.h \
     $$PWD/spectrum/SpectrumMeasurementTesting.h \
-    $$PWD/calibrate/CalibrateMeasurementing.h
+    $$PWD/calibrate/CalibrateMeasurementing.h \
+    $$PWD/calibrate/ViewCalibrateData.h \
+    $$PWD/calibrate/InputSPercentage.h
 
 FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/ParameterSettings.ui \
@@ -39,4 +43,6 @@ FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/spectrum/SpectrumMeasurementMainWin.ui \
     $$PWD/AlterKBValue.ui \
     $$PWD/spectrum/SpectrumMeasurementTesting.ui \
-    $$PWD/calibrate/CalibrateMeasurementing.ui
+    $$PWD/calibrate/CalibrateMeasurementing.ui \
+    $$PWD/calibrate/ViewCalibrateData.ui \
+    $$PWD/calibrate/InputSPercentage.ui

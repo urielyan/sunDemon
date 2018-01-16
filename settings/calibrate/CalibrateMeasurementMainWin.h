@@ -19,6 +19,10 @@ public:
 private slots:
     void on_calibrateMeasurement_clicked();
 
+    void on_viewCalibratedData_clicked();
+
+    void on_inputSContent_clicked();
+
 private:
     Ui::CalibrateMeasurementMainWin *ui;
 };

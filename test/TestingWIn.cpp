@@ -1,4 +1,4 @@
-#include "TestingWIn.h"
+﻿#include "TestingWIn.h"
 #include "ui_TestingWIn.h"
 
 #include <QTimer>
@@ -16,18 +16,11 @@ TestingWIn::TestingWIn(QWidget *parent) :
     m_title = tr("正在测试");
 
     m_remainingTimeColumn = 4;
-
-    connect(&thread, &MasterThread::response, this, &TestingWIn::showResponse);
-    connect(&thread, &MasterThread::error, this, &TestingWIn::processError);
-    connect(&thread, &MasterThread::timeout, this, &TestingWIn::processTimeout);
 }
 
 TestingWIn::~TestingWIn()
 {
     qDebug() << __FUNCTION__;
-    disconnect(&thread, &MasterThread::response, this, &TestingWIn::showResponse);
-    disconnect(&thread, &MasterThread::error, this, &TestingWIn::processError);
-    disconnect(&thread, &MasterThread::timeout, this, &TestingWIn::processTimeout);
     //killTimer(m_timerID);
     delete ui;
 }

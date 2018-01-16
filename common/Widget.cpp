@@ -1,5 +1,7 @@
-#include "Widget.h"
+﻿#include "Widget.h"
 #include "includes.h"
+
+#include <QDebug>
 
 Widget::Widget(QWidget *parent)
     : Widget("", false, parent)
@@ -16,6 +18,17 @@ Widget::Widget(QString m_title, bool isFinalWidget, QWidget *parent)
     connect(this, &Widget::moveToPreWidget,
             MAIN_WINDOW, &MainWin::moveToPreWidget);
     connect(this, &Widget::returnToMainWidget,
+            MAIN_WINDOW, &MainWin::returnToMainWidget);
+}
+
+Widget::~Widget()
+{
+    qDebug() << __FUNCTION__;
+    disconnect(this, &Widget::moveToNextWidget,
+            MAIN_WINDOW, &MainWin::moveToNextWidget);
+    disconnect(this, &Widget::moveToPreWidget,
+            MAIN_WINDOW, &MainWin::moveToPreWidget);
+    disconnect(this, &Widget::returnToMainWidget,
             MAIN_WINDOW, &MainWin::returnToMainWidget);
 }
 

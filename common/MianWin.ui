@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MianWin</class>
+ <widget class="QMainWindow" name="MianWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>379</width>
+    <height>260</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MianWin</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="title">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>title</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="returnButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>返回</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>355</width>
+         <height>162</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+  </widget>
+  <action name="setting">
+   <property name="text">
+    <string>设置</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="clean">
+   <property name="text">
+    <string>清洗</string>
+   </property>
+  </action>
+  <action name="query">
+   <property name="text">
+    <string>查询</string>
+   </property>
+  </action>
+  <action name="test">
+   <property name="text">
+    <string>测试</string>
+   </property>
+  </action>
+  <action name="calibration">
+   <property name="text">
+    <string>校准</string>
+   </property>
+  </action>
+  <action name="timeSettings">
+   <property name="text">
+    <string>时间设置</string>
+   </property>
+  </action>
+  <action name="brightnessAction">
+   <property name="text">
+    <string>亮度设置</string>
+   </property>
+  </action>
+  <action name="actionoilFormat">
+   <property name="text">
+    <string>oilFormat</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>油品规格</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

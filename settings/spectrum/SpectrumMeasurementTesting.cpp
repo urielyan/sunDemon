@@ -4,12 +4,14 @@
 #include <QDebug>
 
 SpectrumMeasurementTesting::SpectrumMeasurementTesting(QWidget *parent) :
-    Widget(parent),
+    MeasurementingWidget(parent),
     ui(new Ui::SpectrumMeasurementTesting)
-  , m_count(40)
 {
     ui->setupUi(this);
     m_title = tr("正在能谱测量");
+
+    m_count = 40;
+    m_seconds = 2;
 }
 
 SpectrumMeasurementTesting::~SpectrumMeasurementTesting()

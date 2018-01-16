@@ -1,4 +1,5 @@
-#include "includes.h"
+﻿#include "includes.h"
+#include "DataBase.h"
 
 #include "TestedData.h"
 #include "ui_TestedData.h"
@@ -6,7 +7,6 @@
 #include <QSqlTableModel>
 #include <QDebug>
 
-#include "DataBase.h"
 #include "TestedDetailsWidget.h"
 TestedData::TestedData(QWidget *parent) :
     Widget(parent),

@@ -1,4 +1,4 @@
-#include "MainWin.h"
+﻿#include "MainWin.h"
 #include "ui_MianWin.h"
 
 #include "Widget.h"
@@ -9,6 +9,7 @@
 
 #include <QStackedLayout>
 #include  <QApplication>
+#include <QDebug>
 
 MainWin* MainWin::m_instance = NULL;
 MainWin::MainWin(QWidget *parent) :
@@ -101,9 +102,16 @@ void MainWin::returnToMainWidget()
 {
     while (m_stackedLayout->count() > 0)
     {
-        m_stackedLayout->removeWidget(m_stackedLayout->widget(0));
+        Widget *widget = static_cast<Widget*>(m_stackedLayout->currentWidget());
+        if(!widget)
+        {
+            return;
+        }
+        m_stackedLayout->removeWidget(widget);
+        delete widget;//在栈布局中remove widget时不能自动删除，固需要delete。
     }
     moveToNextWidget(new MainWidget);
+    qDebug() << m_stackedLayout->count();
 }
 
 bool MainWin::selfCheck()

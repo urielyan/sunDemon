@@ -29,16 +29,13 @@ include (settings/settings.pri)
 include (clean/clean.pri)serialport
 include (selfCheck/selfCheck.pri)
 include (serialport/serialport.pri)
-include (db/db.pri)
 
 SOURCES += main.cpp\
     MainWidget.cpp \
-    MainWin.cpp \
     MeasurementingWidget.cpp
 
 HEADERS  += \
     MainWidget.h \
-    MainWin.h \
     MeasurementingWidget.h
 
 FORMS    += MianWin.ui \

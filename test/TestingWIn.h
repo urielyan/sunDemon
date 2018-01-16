@@ -1,4 +1,4 @@
-#ifndef TESTINGWIN_H
+﻿#ifndef TESTINGWIN_H
 #define TESTINGWIN_H
 
 #include "TestInfo.h"
@@ -6,7 +6,6 @@
 #include <MeasurementingWidget.h>
 #include <QWidget>
 #include <Widget.h>
-#include <masterthread.h>
 
 namespace Ui {
 class TestingWIn;
@@ -18,7 +17,7 @@ class TestingWIn : public MeasurementingWidget
 
 public:
     explicit TestingWIn(QWidget *parent = 0);
-    ~TestingWIn();
+    ~TestingWIn() Q_DECL_OVERRIDE;
     bool init() Q_DECL_OVERRIDE;
 
     TestInfo &info();
@@ -29,16 +28,15 @@ protected slots:
 
 private slots:
     void startTest();
-    void showResponse(const QByteArray &s);
-    void processError(const QString &s);
-    void processTimeout(const QString &s);
+    void showResponse(const QByteArray &s) Q_DECL_OVERRIDE;
+    void processError(const QString &s) Q_DECL_OVERRIDE;
+    void processTimeout(const QString &s) Q_DECL_OVERRIDE;
 
 private:
     Ui::TestingWIn *ui;
 
     TestInfo m_info;
     int m_dataID;
-    MasterThread thread;
 
 private:
     void updateTableWidget();
