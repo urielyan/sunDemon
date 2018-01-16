@@ -33,11 +33,13 @@ include (db/db.pri)
 
 SOURCES += main.cpp\
     MainWidget.cpp \
-    MainWin.cpp
+    MainWin.cpp \
+    MeasurementingWidget.cpp
 
 HEADERS  += \
     MainWidget.h \
-    MainWin.h
+    MainWin.h \
+    MeasurementingWidget.h
 
 FORMS    += MianWin.ui \
     MainWidget.ui

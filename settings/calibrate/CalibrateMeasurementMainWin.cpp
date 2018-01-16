@@ -1,6 +1,7 @@
 ﻿#include "CalibrateMeasurementMainWin.h"
 #include "ui_CalibrateMeasurementMainWin.h"
 
+#include "CalibrateMeasurementing.h"
 CalibrateMeasurementMainWin::CalibrateMeasurementMainWin(QWidget *parent) :
     Widget(parent),
     ui(new Ui::CalibrateMeasurementMainWin)
@@ -12,4 +13,10 @@ CalibrateMeasurementMainWin::CalibrateMeasurementMainWin(QWidget *parent) :
 CalibrateMeasurementMainWin::~CalibrateMeasurementMainWin()
 {
     delete ui;
+}
+
+void CalibrateMeasurementMainWin::on_calibrateMeasurement_clicked()
+{
+    CalibrateMeasurementing *c = new CalibrateMeasurementing;
+    emit moveToNextWidget(c);
 }

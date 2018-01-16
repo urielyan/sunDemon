@@ -3,6 +3,7 @@
 
 #include "TestInfo.h"
 
+#include <MeasurementingWidget.h>
 #include <QWidget>
 #include <Widget.h>
 #include <masterthread.h>
@@ -11,7 +12,7 @@ namespace Ui {
 class TestingWIn;
 }
 
-class TestingWIn : public Widget
+class TestingWIn : public MeasurementingWidget
 {
     Q_OBJECT
 
@@ -36,7 +37,6 @@ private:
     Ui::TestingWIn *ui;
 
     TestInfo m_info;
-    int m_timerID;
     int m_dataID;
     MasterThread thread;
 

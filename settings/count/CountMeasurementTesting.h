@@ -1,6 +1,7 @@
 ﻿#ifndef COUNTMEASUREMENTTESTING_H
 #define COUNTMEASUREMENTTESTING_H
 
+#include <MeasurementingWidget.h>
 #include <QWidget>
 #include <Widget.h>
 
@@ -8,7 +9,7 @@ namespace Ui {
 class CountMeasurementTesting;
 }
 
-class CountMeasurementTesting : public Widget
+class CountMeasurementTesting : public MeasurementingWidget
 {
     Q_OBJECT
 
