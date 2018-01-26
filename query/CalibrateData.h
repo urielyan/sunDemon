@@ -1,4 +1,4 @@
-#ifndef CALIBRATEDATA_H
+﻿#ifndef CALIBRATEDATA_H
 #define CALIBRATEDATA_H
 
 #include <QWidget>
@@ -15,6 +15,7 @@ class CalibrateData : public Widget
 public:
     explicit CalibrateData(QWidget *parent = 0);
     ~CalibrateData();
+    virtual bool init();
 
 private:
     Ui::CalibrateData *ui;

@@ -1,5 +1,12 @@
+﻿#include "includes.h"
+#include "DataBase.h"
+
 #include "CalibrateData.h"
 #include "ui_CalibrateData.h"
+
+
+#include <QSqlTableModel>
+#include <QDebug>
 
 CalibrateData::CalibrateData(QWidget *parent) :
     Widget(parent),
@@ -12,4 +19,11 @@ CalibrateData::CalibrateData(QWidget *parent) :
 CalibrateData::~CalibrateData()
 {
     delete ui;
+}
+
+bool CalibrateData::init()
+{
+    DataBaseManager *db = MAIN_WINDOW->db();
+    ui->tableView->setModel(db->model("calibrateData"));
+    return true;
 }

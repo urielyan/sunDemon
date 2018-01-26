@@ -1,4 +1,4 @@
-#include <QMessageBox>
+﻿#include <QMessageBox>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QVBoxLayout>

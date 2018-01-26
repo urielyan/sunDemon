@@ -1,4 +1,4 @@
-#ifndef COUNTDATA_H
+﻿#ifndef COUNTDATA_H
 #define COUNTDATA_H
 
 #include <QWidget>
@@ -15,6 +15,7 @@ class CountData : public Widget
 public:
     explicit CountData(QWidget *parent = 0);
     ~CountData();
+    virtual bool init();
 
 private:
     Ui::CountData *ui;
