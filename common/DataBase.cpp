@@ -90,6 +90,11 @@ void DataBaseManager::setDb(QSqlDatabase *db)
     m_db = db;
 }
 
+bool DataBaseManager::hasModel(QString tableName)
+{
+    return m_models.contains(tableName);
+}
+
 QSqlTableModel *DataBaseManager::model() const
 {
     return m_model;

@@ -4,6 +4,7 @@
 #include "CalibrateMeasurementing.h"
 #include "ViewCalibrateData.h"
 #include "InputSPercentage.h"
+#include "ComputeKBValue.h"
 CalibrateMeasurementMainWin::CalibrateMeasurementMainWin(QWidget *parent) :
     Widget(parent),
     ui(new Ui::CalibrateMeasurementMainWin)
@@ -32,5 +33,11 @@ void CalibrateMeasurementMainWin::on_viewCalibratedData_clicked()
 void CalibrateMeasurementMainWin::on_inputSContent_clicked()
 {
     InputSPercentage *c = new InputSPercentage;
+    emit moveToNextWidget(c);
+}
+
+void CalibrateMeasurementMainWin::on_computeKBValue_clicked()
+{
+    ComputeKBValue *c = new ComputeKBValue;
     emit moveToNextWidget(c);
 }

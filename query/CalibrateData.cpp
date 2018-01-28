@@ -24,6 +24,6 @@ CalibrateData::~CalibrateData()
 bool CalibrateData::init()
 {
     DataBaseManager *db = MAIN_WINDOW->db();
-    ui->tableView->setModel(db->model("calibrateData"));
+    ui->tableView->setModel(db->model("calibrateResult"));
     return true;
 }

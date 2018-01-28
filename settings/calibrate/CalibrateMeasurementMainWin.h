@@ -23,6 +23,8 @@ private slots:
 
     void on_inputSContent_clicked();
 
+    void on_computeKBValue_clicked();
+
 private:
     Ui::CalibrateMeasurementMainWin *ui;
 };

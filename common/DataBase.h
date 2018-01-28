@@ -18,6 +18,7 @@ public:
     QSqlDatabase *db() const;
     void setDb(QSqlDatabase *db);
 
+    bool hasModel(QString tableName);
     QSqlTableModel *model() const;
     QSqlTableModel *model(QString tableName);
     void setModel(QSqlTableModel *model);

@@ -25,6 +25,8 @@ bool InputSPercentage::init()
 {
     DataBaseManager *db = MAIN_WINDOW->db();
     ui->tableView->setModel(db->model("calibratePercentage"));
+    ui->tableView->setColumnHidden(0, true);
+    ui->tableView->sortByColumn(0, Qt::AscendingOrder);
     return true;
 }
 
@@ -33,9 +35,17 @@ void InputSPercentage::on_reset_clicked()
     QSqlTableModel *model = static_cast<QSqlTableModel*>(ui->tableView->model());
     if (model)
     {
-        DataBaseManager *dbManager = MAIN_WINDOW->db();
-        QSqlQuery query(*dbManager->db());
-        query.exec("delete FROM calibratePercentage where 1");
+        DataBaseManager *db = MAIN_WINDOW->db();
+        QSqlQuery query(*db->db());
+        QSqlTableModel *model = db->model("calibratePercentage");
+        for (int i = 1;
+             i <= model->rowCount();
+             ++i)
+        {
+            query.exec(QString("UPDATE calibratePercentage "
+                       "SET percentage = \"0.0000\""
+                       " where id = %1").arg(i));
+        }
         model->select();
     }
 }
