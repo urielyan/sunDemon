@@ -1,6 +1,7 @@
 ﻿#ifndef INPUTSPERCENTAGE_H
 #define INPUTSPERCENTAGE_H
 
+#include <QModelIndex>
 #include <QWidget>
 #include <Widget.h>
 
@@ -21,8 +22,13 @@ public:
 private slots:
     void on_reset_clicked();
 
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
+    void setTextAndReturn(QString s);
+
 private:
     Ui::InputSPercentage *ui;
+    QModelIndex m_selectedIndex;
 };
 
 #endif // INPUTSPERCENTAGE_H

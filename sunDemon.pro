@@ -29,6 +29,7 @@ include (settings/settings.pri)
 include (clean/clean.pri)serialport
 include (selfCheck/selfCheck.pri)
 include (serialport/serialport.pri)
+include (virtualNumberKeyboard/virtualNumberKeyboard.pri)
 
 SOURCES += main.cpp\
     MainWidget.cpp \

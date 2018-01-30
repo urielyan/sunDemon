@@ -3,10 +3,12 @@
 
 #include "InputSPercentage.h"
 #include "ui_InputSPercentage.h"
+#include "VirtualKeyboard.h"
 
 #include <QSqlTableModel>
 #include <QDebug>
 #include <QSqlQuery>
+#include <QVariant>
 
 InputSPercentage::InputSPercentage(QWidget *parent) :
     Widget(parent),
@@ -48,4 +50,29 @@ void InputSPercentage::on_reset_clicked()
         }
         model->select();
     }
+}
+
+void InputSPercentage::on_tableView_doubleClicked(const QModelIndex &index)
+{
+    if (!index.isValid())
+    {
+        return;
+    }
+
+    VirtualKeyboard *m_keyBoard = new VirtualKeyboard(this);
+    m_keyBoard->setInputMask(".9999");
+    m_keyBoard->setInitText(index.data().toString());
+
+    connect(m_keyBoard, &VirtualKeyboard::inputComplete,
+            this, &InputSPercentage::setTextAndReturn);
+    MAIN_WINDOW->moveToNextWidget(m_keyBoard);
+
+    m_selectedIndex = index;
+    //return ui->tableView->doubleClicked(index);
+}
+
+void InputSPercentage::setTextAndReturn(QString s)
+{
+    ui->tableView->model()->setData(m_selectedIndex, s);
+    MAIN_WINDOW->moveToPreWidget();
 }
