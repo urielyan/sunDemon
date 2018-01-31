@@ -53,7 +53,7 @@ void VirtualKeyboard::buttonsClicked()
     }
 
     ui->lineEdit->setText(ui->lineEdit->text().append(b->text()));
-    qDebug() << number << b->text() << ui->lineEdit->text().toFloat() << ok;
+    //qDebug() << number << b->text() << ui->lineEdit->text().toFloat() << ok;
 }
 
 void VirtualKeyboard::on_backspace_clicked()

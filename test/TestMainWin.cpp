@@ -14,6 +14,7 @@ TestMainWin::TestMainWin(QWidget *parent) :
 {
     ui->setupUi(this);
     m_title = tr("测试");
+    ui->number->setInputMask("000000");
 }
 
 TestMainWin::~TestMainWin()
