@@ -4,11 +4,10 @@
 #include "ComputeKBValue.h"
 #include "ui_ComputeKBValue.h"
 
-
-
 #include <QSqlTableModel>
 #include <QDebug>
 #include <QMessageBox>
+#include <QDateTime>
 
 ComputeKBValue::ComputeKBValue(QWidget *parent) :
     Widget(parent),
@@ -55,6 +54,7 @@ bool ComputeKBValue::init()
 
 void ComputeKBValue::on_computeKBValue_clicked()
 {
+    float saveDatas[12][3];
     DataBaseManager *db = MAIN_WINDOW->db();
     QSqlTableModel *calibrateModel = db->model("calibrateData");
     QSqlTableModel *percentageModel = db->model("calibratePercentage");
@@ -73,9 +73,11 @@ void ComputeKBValue::on_computeKBValue_clicked()
             validPercentages.insert(i, data);
         }
     }
+
     validPercentageCount = validPercentages.count();
 
     QMap <int, double> referenceProportionTested;
+    int saveDataCount = 0;
     foreach (int row, validPercentages.keys()) {
         QModelIndex referenceIDX = calibrateModel->index(row, 0);
         QModelIndex testedIDX = calibrateModel->index(row, 1);
@@ -84,6 +86,9 @@ void ComputeKBValue::on_computeKBValue_clicked()
         double tested = calibrateModel->data(testedIDX).toDouble();
         double proportion = reference / tested;
         referenceProportionTested.insert(row, proportion);
+        saveDatas[saveDataCount][0] = reference;
+        saveDatas[saveDataCount][1] = tested;
+        saveDatas[saveDataCount][2] = validPercentages.value(row);
     }
 
     double RPTSum = 0;  //参考样/待测样的和
@@ -135,4 +140,5 @@ void ComputeKBValue::on_computeKBValue_clicked()
             .arg(b, 4, 'f', 4, '0')
             .arg(r, 4, 'f', 4, '0');
 
+    qDebug() << QDateTime::currentDateTime().toString();
 }

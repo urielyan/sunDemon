@@ -19,6 +19,8 @@ public:
 private slots:
     void on_returnToMainWin_clicked();
 
+    void on_isSave_clicked();
+
 private:
     Ui::Tested *ui;
 };

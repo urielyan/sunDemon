@@ -8,7 +8,7 @@
 LineEdit::LineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
-
+    setMaxLength(8);
 }
 
 void LineEdit::setTextAndReturn(QString s)
@@ -20,6 +20,7 @@ void LineEdit::setTextAndReturn(QString s)
 
 void LineEdit::mousePressEvent(QMouseEvent *e)
 {
+    Q_UNUSED(e);
     VirtualKeyboard *m_keyBoard = new VirtualKeyboard(this);
     m_keyBoard->setInputMask(this->inputMask());
     m_keyBoard->setInitText(text());

@@ -19,3 +19,8 @@ void Tested::on_returnToMainWin_clicked()
 {
     emit returnToMainWidget();
 }
+
+void Tested::on_isSave_clicked()
+{
+
+}

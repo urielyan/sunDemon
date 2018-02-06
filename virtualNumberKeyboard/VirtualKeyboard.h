@@ -31,6 +31,8 @@ private slots:
 
     void on_ok_clicked();
 
+    void on_point_clicked();
+
 private:
     Ui::VirtualKeyboard *ui;
 };

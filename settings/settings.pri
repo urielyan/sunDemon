@@ -15,7 +15,8 @@ SOURCES += $$PWD/SettingsMainWin.cpp \
     $$PWD/calibrate/CalibrateMeasurementing.cpp \
     $$PWD/calibrate/ViewCalibrateData.cpp \
     $$PWD/calibrate/InputSPercentage.cpp \
-    $$PWD/calibrate/ComputeKBValue.cpp
+    $$PWD/calibrate/ComputeKBValue.cpp \
+    $$PWD/calibrate/ComputeKBValueDoneWidget.cpp
 
 HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/ParameterSettings.h \
@@ -32,7 +33,8 @@ HEADERS  += $$PWD/SettingsMainWin.h \
     $$PWD/calibrate/CalibrateMeasurementing.h \
     $$PWD/calibrate/ViewCalibrateData.h \
     $$PWD/calibrate/InputSPercentage.h \
-    $$PWD/calibrate/ComputeKBValue.h
+    $$PWD/calibrate/ComputeKBValue.h \
+    $$PWD/calibrate/ComputeKBValueDoneWidget.h
 
 FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/ParameterSettings.ui \
@@ -48,4 +50,5 @@ FORMS    += $$PWD/SettingsMainWin.ui \
     $$PWD/calibrate/CalibrateMeasurementing.ui \
     $$PWD/calibrate/ViewCalibrateData.ui \
     $$PWD/calibrate/InputSPercentage.ui \
-    $$PWD/calibrate/ComputeKBValue.ui
+    $$PWD/calibrate/ComputeKBValue.ui \
+    $$PWD/calibrate/ComputeKBValueDoneWidget.ui

@@ -72,3 +72,8 @@ void VirtualKeyboard::on_ok_clicked()
     emit inputComplete(QString::number(ui->lineEdit->text().toFloat()));
     qDebug() << ui->lineEdit->text().toFloat();
 }
+
+void VirtualKeyboard::on_point_clicked()
+{
+    ui->lineEdit->setText(ui->lineEdit->text().append("."));
+}

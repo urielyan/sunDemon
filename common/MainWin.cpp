@@ -67,6 +67,7 @@ void MainWin::moveToNextWidget(Widget *widget)
     ui->scrollArea->setDisabled(true);
     if (!widget->init())
     {
+        ui->scrollArea->setDisabled(false);
         return;
     }
     ui->scrollArea->setDisabled(false);
@@ -79,6 +80,7 @@ void MainWin::moveToNextWidget(Widget *widget)
 
 void MainWin::moveToPreWidget()
 {
+    qDebug() << ui->scrollArea->isEnabled();
     Widget *widget = static_cast<Widget*>(m_stackedLayout->currentWidget());
     if(!widget)
     {
