@@ -23,5 +23,10 @@ bool CountData::init()
 {
     DataBaseManager *db = MAIN_WINDOW->db();
     ui->tableView->setModel(db->model("countData"));
+//    ui->tableView->hideColumn(2);
+    ui->tableView->setSortingEnabled(true);
+    ui->tableView->setAutoScroll(true);
+    ui->tableView->resizeColumnsToContents();
+    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     return true;
 }

@@ -17,6 +17,9 @@ public:
     ~CalibrateData();
     virtual bool init();
 
+private slots:
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::CalibrateData *ui;
 };

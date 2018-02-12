@@ -25,6 +25,11 @@ bool TestedData::init()
 {
     DataBaseManager *db = MAIN_WINDOW->db();
     ui->tableView->setModel(db->model("sample_data"));
+//    ui->tableView->hideColumn(2);
+    ui->tableView->setSortingEnabled(true);
+    ui->tableView->setAutoScroll(true);
+    ui->tableView->resizeColumnsToContents();
+    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     return true;
 }
 

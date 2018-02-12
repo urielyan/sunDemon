@@ -22,6 +22,9 @@ private slots:
 
 private:
     Ui::ComputeKBValue *ui;
+
+private:
+    int saveData(QString kbr, QByteArray array, QString dateTime);
 };
 
 #endif // COMPUTEKBVALUE_H

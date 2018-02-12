@@ -40,6 +40,7 @@ private:
 
 private:
     void updateTableWidget();
+    bool saveData();
 };
 
 #endif // TESTINGWIN_H

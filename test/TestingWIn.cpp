@@ -62,6 +62,7 @@ void TestingWIn::timerEvent(QTimerEvent *event)
                     if(i == m_info.getRepeatTime() - 1)
                     {
                         killTimer(m_timerID);
+                        bool isSaveSuccess = saveData();
                         Tested *tested = new Tested();
                         emit moveToNextWidget(tested);
                     }
@@ -150,4 +151,12 @@ void TestingWIn::updateTableWidget()
     }
 
     m_timerID = startTimer(10);
+}
+
+bool TestingWIn::saveData()
+{
+    for (int i = 0; i < ui->tableWidget->rowCount(); ++i)
+    {
+
+    }
 }

@@ -16,6 +16,10 @@ public:
     explicit ComputeKBValueDoneWidget(QWidget *parent = 0);
     ~ComputeKBValueDoneWidget();
 
+    void setKBR(bool kbrOrA012, float k, float b, float r);
+
+    void setDateTimeStr(const QString &dateTimeStr);
+
 private slots:
     void on_isSave_clicked();
 
@@ -23,6 +27,7 @@ private slots:
 
 private:
     Ui::ComputeKBValueDoneWidget *ui;
+    QString m_dateTimeStr;
 };
 
 #endif // COMPUTEKBVALUEDONEWIDGET_H
